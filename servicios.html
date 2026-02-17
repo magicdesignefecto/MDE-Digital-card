@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Servicios | Magic Design Efecto</title>
     
-    <meta name="description" content="MAGIC DESIGN EFECTO LINK IN BIO - LP, BOL. Agencia de Marketing Digital B2B.">
+    <meta name="description" content="Diseñamos sistemas de marketing que convierten tráfico en oportunidades reales de negocio.">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://magicdesignefecto.com/servicios">
-    <meta property="og:title" content="Servicios | Magic Design Efecto">
-    <meta property="og:description" content="MAGIC DESIGN EFECTO LINK IN BIO - LP, BOL. Agencia de Marketing Digital B2B.">
-    <meta property="og:image" content="https://github.com/magicdesignefecto/Gestion-de-Redes-Sociales/blob/main/logo%20magic%20design%20efecto%20meta%20datos.png?raw=true">
+    
+    <meta property="og:title" content="MAGIC DESIGN EFECTO | Agencia de Crecimiento B2B">
+    
+    <meta property="og:description" content="Diseñamos sistemas de marketing que convierten tráfico en oportunidades reales de negocio.">
+    
+    <meta property="og:image" content="https://raw.githubusercontent.com/magicdesignefecto/Gestion-de-Redes-Sociales/main/logo%20magic%20design%20efecto%20meta%20datos.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://magicdesignefecto.com/servicios">
-    <meta name="twitter:title" content="Servicios | Magic Design Efecto">
-    <meta name="twitter:description" content="MAGIC DESIGN EFECTO LINK IN BIO - LP, BOL. Agencia de Marketing Digital B2B.">
-    <meta name="twitter:image" content="https://github.com/magicdesignefecto/Gestion-de-Redes-Sociales/blob/main/logo%20magic%20design%20efecto%20meta%20datos.png?raw=true">
+    <meta name="twitter:title" content="MAGIC DESIGN EFECTO | Agencia de Crecimiento B2B">
+    <meta name="twitter:description" content="Diseñamos sistemas de marketing que convierten tráfico en oportunidades reales de negocio.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/magicdesignefecto/Gestion-de-Redes-Sociales/main/logo%20magic%20design%20efecto%20meta%20datos.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/magicdesignefecto/Gestion-de-Redes-Sociales/1f7db2be0c4d2839f2328cbad3e4c8d4a390b98e/logo%20svg%20magic%20design%20efecto.svg">
 
@@ -34,7 +39,7 @@
             background-color: #353535;
             color: #1c1e21;
             margin: 0; padding: 0;
-            /* Altura dinámica para móviles */
+            /* Altura dinámica para corregir barra de navegación en móviles */
             height: 100vh; 
             height: 100dvh; 
             width: 100vw;
@@ -55,7 +60,7 @@
         /* tabs-head */
         .tabs-head { background-color: #353535; height: 40px; display: flex; justify-content: space-between; align-items: end; padding-left: 15px; padding-right: 10px; }
         
-        /* Pestaña corregida (Sin sombrero) */
+        /* Pestaña corregida: Rectangular con bordes suaves, SIN SOMBRERO */
         .tabs-head .tab-open { 
             width: 140px; 
             height: 34px; 
@@ -85,8 +90,8 @@
         .browser-content-area {
             flex: 1; overflow-y: auto; padding: 20px; background-color: #fff;
             scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
-            /* Espacio extra al final para scroll completo */
-            padding-bottom: 40px; 
+            /* Espacio extra al final para asegurar que se vea el botón */
+            padding-bottom: 60px; 
         }
 
         .service-hook { font-size: 1.1rem; font-weight: 700; color: #1c1e21; margin: 10px 0 25px 0; line-height: 1.4; text-align: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 20px; }
@@ -110,7 +115,7 @@
             font-size: 0.7rem;
             color: #999;
             margin-top: 30px;
-            margin-bottom: 50px; /* Margen final de seguridad */
+            margin-bottom: 50px;
             font-weight: 500;
         }
 
@@ -225,7 +230,6 @@
             <div class="copyright">
                 © 2026 Magic Design Efecto. Todos los derechos reservados.
             </div>
-
         </div>
     </div>
 
@@ -325,19 +329,16 @@
         function sendToWhatsApp() {
             playClickSound();
             
-            // Obtener valores
             const name = document.getElementById('clientName').value;
             const business = document.getElementById('clientBusiness').value;
             const phone = document.getElementById('clientPhone').value;
             const need = document.getElementById('clientNeed').value;
 
-            // Validación básica
             if(!name || !need) {
                 alert("Por favor completa al menos tu nombre y qué necesitas.");
                 return;
             }
 
-            // Construir mensaje
             const myNumber = "59163212806"; 
             
             const message = `*Hablemos de mi negocio*\n\n` +
@@ -347,9 +348,7 @@
                              `📱 *Mi WhatsApp:* ${phone || 'El de este chat'}\n` +
                              `🤔 *Necesito ayuda para:* ${need}`;
 
-            // Abrir WhatsApp con texto correctamente codificado
             window.open(`https://api.whatsapp.com/send?phone=${myNumber}&text=${encodeURIComponent(message)}`, '_blank');
-            
             setTimeout(closeFormModal, 1000);
         }
     </script>
