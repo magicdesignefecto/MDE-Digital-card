@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Design Efecto | Tarjeta Digital</title>
+    <meta name="description" content="Magic Design Efecto - Agencia de Marketing Digital B2B Global. Servicios de SEO, publicidad digital, branding y desarrollo web.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://magicdesignefecto.com/">
+    <meta property="og:title" content="Magic Design Efecto | Agencia de Marketing B2B">
+    <meta property="og:description" content="Agencia de Marketing Digital B2B Global.">
+    <meta property="og:image" content="https://github.com/magicdesignefecto/Gestion-de-Redes-Sociales/blob/main/logo%20magic%20design%20efecto%20meta%20datos.png?raw=true">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://magicdesignefecto.com/">
+    <meta name="twitter:title" content="Magic Design Efecto | Agencia de Marketing B2B">
+    <meta name="twitter:description" content="Agencia de Marketing Digital B2B Global.">
+    <meta name="twitter:image" content="https://github.com/magicdesignefecto/Gestion-de-Redes-Sociales/blob/main/logo%20magic%20design%20efecto%20meta%20datos.png?raw=true">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/magicdesignefecto/Gestion-de-Redes-Sociales/1f7db2be0c4d2839f2328cbad3e4c8d4a390b98e/logo%20svg%20magic%20design%20efecto.svg">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            padding-top: 2rem;
+            padding-bottom: 110px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
+        /* --- CABECERA --- */
+        .header-layout { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            margin-bottom: 1.5rem; 
+            text-align: left;
+            padding: 0 5px;
+        }
+        
+        .header-text { flex: 1; padding-right: 10px; overflow: hidden; }
+        .title { font-size: 1.1rem; font-weight: 800; color: #00245a; line-height: 1.2; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .subtitle { font-size: 0.75rem; color: #606770; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .logo-small { width: 65px; height: 65px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); flex-shrink: 0; }
+
+        /* --- VIDEO & QUOTE --- */
+        .video-frame { background-color: #00245a; border-radius: 20px; padding: 0.5rem; margin: 1.5rem 0; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); }
+        .video-container { position: relative; overflow: hidden; width: 100%; padding-top: 56.25%; border-radius: 15px; background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .quote-section { margin: 1.5rem 0 1rem 0; padding: 0 1rem; }
+        .quote-text { font-style: italic; color: #606770; font-size: 0.95rem; line-height: 1.5; margin-bottom: 0.5rem; }
+        .quote-author { font-weight: 500; color: #90949c; font-size: 0.85rem; }
+        
+        /* --- CARRUSEL --- */
+        .marquee-wrapper { width: 100%; overflow: hidden; margin-bottom: 2rem; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .animate-marquee { display: flex; width: max-content; animation: marquee 25s linear infinite; }
+        .marquee-track { display: flex; align-items: center; flex-wrap: nowrap; }
+        .marquee-item { margin: 0 1.5rem; color: #64748b; font-size: 1.25rem; font-weight: 600; display: flex; align-items: center; gap: 0.75rem; white-space: nowrap; }
+        .marquee-item i { font-size: 1.5rem; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
+        /* --- BOTONES MÁGICOS --- */
+        .links-container { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+        .row-buttons { display: flex; gap: 12px; width: 100%; }
+        .group-title { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #90949c; margin-top: 1.5rem; margin-bottom: 0.8rem; text-align: left; padding-left: 5px; }
+
+        .magic-btn {
+            --primary: #00245a; --accent: #fcc200; --radius: 14px;
+            cursor: pointer; border-radius: var(--radius); border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center; position: relative;
+            transition: all 0.3s ease; width: 100%; height: 60px;
+            font-family: "Poppins", sans-serif; font-size: 16px; font-weight: 600;
+            color: var(--primary); background: white; text-decoration: none; overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .magic-btn:hover, .magic-btn:active { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); }
+        
+        .state { z-index: 2; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; }
+        .state p { display: flex; align-items: center; justify-content: center; margin-left: 30px; }
+        .state p span { display: block; opacity: 0; animation: slideDown 0.8s ease forwards calc(var(--i) * 0.03s); }
+        .magic-btn:hover p span, .magic-btn:active p span { opacity: 1; animation: wave 0.5s ease forwards calc(var(--i) * 0.02s); }
+        .state .icon { position: absolute; left: 20px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+        .state .icon i { width: 24px; height: 24px; color: var(--primary); transition: color 0.3s ease; font-size: 20px; }
+        .magic-btn:hover .state--default .icon i, .magic-btn:active .state--default .icon i { color: var(--accent); transform: scale(1.1); }
+        .magic-btn.clicked { background-color: #f0f2f5; }
+        .magic-btn.clicked .state--default { display: none; }
+        .state--open { display: none; }
+        .magic-btn.clicked .state--open { display: flex; }
+        .magic-btn.clicked .state--default .icon { animation: takeOff 0.8s linear forwards; }
+        .magic-btn.clicked .state--open span { opacity: 0; animation: slideDown 0.5s ease forwards calc(var(--i) * 0.1s); color: var(--accent); }
+        .magic-btn.clicked .state--open .icon i { opacity: 0; animation: appear 0.6s ease forwards 0.2s; color: var(--primary); }
+
+        @keyframes slideDown { 0% { opacity: 0; transform: translateY(-20px) translateX(5px) rotate(-90deg); filter: blur(5px); } 30% { opacity: 1; transform: translateY(4px) translateX(0) rotate(0); filter: blur(0); } 50% { opacity: 1; transform: translateY(-3px) translateX(0) rotate(0); } 100% { opacity: 1; transform: translateY(0) translateX(0) rotate(0); } }
+        @keyframes wave { 30% { opacity: 1; transform: translateY(4px) translateX(0) rotate(0); } 50% { opacity: 1; transform: translateY(-3px) translateX(0) rotate(0); color: var(--accent); } 100% { opacity: 1; transform: translateY(0) translateX(0) rotate(0); } }
+        @keyframes takeOff { 0% { opacity: 1; } 60% { opacity: 1; transform: translateX(70px) rotate(45deg) scale(1.5); } 100% { opacity: 0; transform: translateX(160px) rotate(45deg) scale(0); } }
+        @keyframes appear { 0% { opacity: 0; transform: scale(4) rotate(-40deg); filter: blur(4px); } 100% { opacity: 1; transform: scale(1); filter: blur(0); } }
+
+        /* --- BOTONES CIRCULARES 3D REDES SOCIALES --- */
+        .social-row { display: flex; justify-content: center; gap: 20px; width: 100%; margin-top: 0.5rem; }
+        .social-circle {
+            width: 64px; height: 64px; border-radius: 50%; border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 26px; color: #fff; position: relative;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .social-circle::before {
+            content: ''; position: absolute; inset: 0; border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255,255,255,0.25) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .social-circle::after {
+            content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+            width: 50px; height: 8px; border-radius: 50%;
+            background: rgba(0,0,0,0.18); filter: blur(4px);
+            transition: all 0.25s ease;
+        }
+        .social-circle:hover, .social-circle:active {
+            transform: translateY(-5px) scale(1.08);
+        }
+        .social-circle:hover::after, .social-circle:active::after {
+            width: 40px; bottom: -10px; opacity: 0.6;
+        }
+        .social-circle:active { transform: translateY(-2px) scale(0.95); }
+        .social-circle.clicked { animation: socialPop 0.6s ease forwards; }
+        @keyframes socialPop {
+            0% { transform: scale(1); }
+            30% { transform: scale(0.85) rotate(-8deg); }
+            60% { transform: scale(1.15) rotate(4deg); }
+            100% { transform: scale(1) rotate(0); }
+        }
+        .social-fb { background: linear-gradient(135deg, #4267B2 0%, #2d4880 100%); box-shadow: 0 6px 16px rgba(66,103,178,0.45), inset 0 1px 0 rgba(255,255,255,0.2); }
+        .social-ig { background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 40%, #6228d7 100%); box-shadow: 0 6px 16px rgba(238,42,123,0.45), inset 0 1px 0 rgba(255,255,255,0.2); }
+        .social-tk { background: linear-gradient(135deg, #25F4EE 0%, #010101 40%, #FE2C55 100%); box-shadow: 0 6px 16px rgba(254,44,85,0.4), inset 0 1px 0 rgba(255,255,255,0.15); }
+        .social-label { font-size: 0.65rem; font-weight: 600; color: #90949c; margin-top: 8px; text-align: center; letter-spacing: 0.3px; }
+
+        /* --- FOOTER FIJO --- */
+        .sticky-footer {
+            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 100%; max-width: 480px; background: #ffffff;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: space-around;
+            padding: 15px 10px; z-index: 999;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top-left-radius: 20px; border-top-right-radius: 20px;
+        }
+        .footer-btn { 
+            flex: 1; border: none; background-color: #f2f4f8; color: #555; 
+            font-size: 0.75rem; font-family: 'Inter', sans-serif; cursor: pointer;
+            padding: 10px 0; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 6px;
+            transition: all 0.2s ease; margin: 0 6px; border-radius: 14px 14px 4px 4px;
+        }
+        .footer-btn:active { transform: scale(0.96); background-color: #e4e6eb; }
+        .footer-btn i { font-size: 1.3rem; color: #1c1e21; transition: color 0.3s ease; }
+        .footer-btn:hover i, .footer-btn:active i { color: #00245a; } 
+        .copyright { margin-top: 2.5rem; font-size: 0.75rem; color: #90949c; }
+
+        /* --- MODAL / POPUP ESTILO --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 36, 90, 0.6); backdrop-filter: blur(5px); z-index: 10000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+        .modal-content {
+            background: white; width: 85%; max-width: 320px; border-radius: 24px; padding: 30px 20px;
+            text-align: center; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: scale(0.8); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 24px; color: #90949c; cursor: pointer; background: none; border: none; padding: 0; line-height: 1; }
+        .modal-logo { width: 80px; height: 80px; object-fit: contain; margin: 0 auto 15px auto; display: block; }
+        .modal-title { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #606770; margin-bottom: 5px; font-weight: 500; }
+        .modal-name { font-family: 'Poppins', sans-serif; font-size: 1.2rem; color: #00245a; font-weight: 700; margin-bottom: 5px; line-height: 1.2; }
+        .modal-number { font-family: 'Inter', sans-serif; font-size: 1.5rem; color: #1c1e21; font-weight: 700; margin: 10px 0 20px 0; letter-spacing: 1px; }
+        .modal-btn {
+            background-color: #1c1e21; color: white; border: none; padding: 12px 24px;
+            border-radius: 50px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem; cursor: pointer;
+            width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.3s;
+        }
+        .modal-btn:active { background-color: #00245a; transform: scale(0.98); }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <header class="header-layout">
+            <div class="header-text">
+                <h1 class="title">Magic Design Efecto</h1>
+                <p class="subtitle">Agencia de Marketing Digital B2B</p>
+            </div>
+            <img src="https://raw.githubusercontent.com/magicdesignefecto/Gestion-de-Redes-Sociales/1f7db2be0c4d2839f2328cbad3e4c8d4a390b98e/logo%20svg%20magic%20design%20efecto.svg" alt="Logo Magic Design Efecto" class="logo-small">
+        </header>
+
+        <div class="video-frame">
+            <div class="video-container" id="videoContainer">
+                <iframe 
+                    id="youtubeVideo"
+                    src="https://www.youtube.com/embed/fOi66ypvP8I?autoplay=1&mute=1&loop=1&playlist=fOi66ypvP8I&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&origin=https://magicdesignefecto.com"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    title="Video de presentación Magic Design Efecto">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="quote-section">
+            <blockquote class="quote-text">"El marketing ya no se trata de las cosas que vendes, sino de las historias que cuentas."</blockquote>
+            <cite class="quote-author">&mdash; Seth Godin</cite>
+        </div>
+
+        <div class="marquee-wrapper">
+            <div class="animate-marquee">
+                <div class="marquee-track">
+                    <span class="marquee-item"><i class="fab fa-google"></i> Google Marketing</span>
+                    <span class="marquee-item"><i class="fab fa-meta"></i> Meta Business</span>
+                    <span class="marquee-item"><i class="fab fa-tiktok"></i> TikTok Ads</span>
+                    <span class="marquee-item"><i class="fab fa-wordpress"></i> WordPress</span>
+                    <span class="marquee-item"><i class="fab fa-shopify"></i> Shopify</span>
+                    <span class="marquee-item"><i class="fab fa-hubspot"></i> HubSpot</span>
+                </div>
+                <div class="marquee-track">
+                    <span class="marquee-item"><i class="fab fa-google"></i> Google Marketing</span>
+                    <span class="marquee-item"><i class="fab fa-meta"></i> Meta Business</span>
+                    <span class="marquee-item"><i class="fab fa-tiktok"></i> TikTok Ads</span>
+                    <span class="marquee-item"><i class="fab fa-wordpress"></i> WordPress</span>
+                    <span class="marquee-item"><i class="fab fa-shopify"></i> Shopify</span>
+                    <span class="marquee-item"><i class="fab fa-hubspot"></i> HubSpot</span>
+                </div>
+            </div>
+        </div>
+
+        <main class="links-container">
+            <div class="group-title">Sitio Web Oficial</div>
+            <button class="magic-btn" onclick="openLink(this, 'https://magicdesignefecto.com/')">
+                <div class="state state--default">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <p><span style="--i:0">V</span><span style="--i:1">i</span><span style="--i:2">s</span><span style="--i:3">i</span><span style="--i:4">t</span><span style="--i:5">a</span><span style="--i:6">r</span></p>
+                </div>
+                <div class="state state--open">
+                    <div class="icon"><i class="fas fa-arrow-right"></i></div>
+                    <p><span style="--i:0">A</span><span style="--i:1">B</span><span style="--i:2">R</span><span style="--i:3">I</span><span style="--i:4">R</span></p>
+                </div>
+            </button>
+
+            <button class="magic-btn" onclick="goToServices(this)">
+                <div class="state state--default">
+                    <div class="icon"><i class="fas fa-briefcase"></i></div>
+                    <p><span style="--i:0">S</span><span style="--i:1">e</span><span style="--i:2">r</span><span style="--i:3">v</span><span style="--i:4">i</span><span style="--i:5">c</span><span style="--i:6">i</span><span style="--i:7">o</span><span style="--i:8">s</span></p>
+                </div>
+                <div class="state state--open">
+                    <div class="icon"><i class="fas fa-arrow-right"></i></div>
+                    <p><span style="--i:0">V</span><span style="--i:1">E</span><span style="--i:2">R</span></p>
+                </div>
+            </button>
+            
+            <div class="group-title">Canales de Contacto</div>
+            
+            <div class="row-buttons">
+                <button class="magic-btn" onclick="openLink(this, 'https://wa.link/ra0j9q')">
+                    <div class="state state--default">
+                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                        <p><span style="--i:0">W</span><span style="--i:1">h</span><span style="--i:2">a</span><span style="--i:3">t</span><span style="--i:4">s</span><span style="--i:5">A</span><span style="--i:6">p</span><span style="--i:7">p</span></p>
+                    </div>
+                    <div class="state state--open">
+                        <div class="icon"><i class="fas fa-arrow-right"></i></div>
+                        <p><span style="--i:0">D</span><span style="--i:1">I</span><span style="--i:2">R</span><span style="--i:3">I</span><span style="--i:4">G</span><span style="--i:5">I</span><span style="--i:6">E</span><span style="--i:7">N</span><span style="--i:8">D</span><span style="--i:9">O</span></p>
+                    </div>
+                </button>
+
+                <button class="magic-btn" onclick="openLink(this, 'https://t.me/MagicDesignEfecto')">
+                    <div class="state state--default">
+                        <div class="icon"><i class="fab fa-telegram"></i></div>
+                        <p><span style="--i:0">T</span><span style="--i:1">e</span><span style="--i:2">l</span><span style="--i:3">e</span><span style="--i:4">g</span><span style="--i:5">r</span><span style="--i:6">a</span><span style="--i:7">m</span></p>
+                    </div>
+                    <div class="state state--open">
+                        <div class="icon"><i class="fas fa-arrow-right"></i></div>
+                        <p><span style="--i:0">D</span><span style="--i:1">I</span><span style="--i:2">R</span><span style="--i:3">I</span><span style="--i:4">G</span><span style="--i:5">I</span><span style="--i:6">E</span><span style="--i:7">N</span><span style="--i:8">D</span><span style="--i:9">O</span></p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="group-title">Redes Sociales</div>
+            <div class="social-row">
+                <div>
+                    <button class="social-circle social-fb" onclick="openSocial(this, 'https://www.facebook.com/MagicDesignEfecto/')" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <div class="social-label">Facebook</div>
+                </div>
+                <div>
+                    <button class="social-circle social-ig" onclick="openSocial(this, 'https://www.instagram.com/magicdesignefecto')" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <div class="social-label">Instagram</div>
+                </div>
+                <div>
+                    <button class="social-circle social-tk" onclick="openSocial(this, 'https://www.tiktok.com/@magicdesignefecto')" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </button>
+                    <div class="social-label">TikTok</div>
+                </div>
+            </div>
+
+            <div class="group-title">Correo Electrónico</div>
+            <button class="magic-btn" onclick="openLink(this, 'mailto:contacto@magicdesignefecto.com')">
+                <div class="state state--default">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <p><span style="--i:0">E</span><span style="--i:1">m</span><span style="--i:2">a</span><span style="--i:3">i</span><span style="--i:4">l</span></p>
+                </div>
+                <div class="state state--open"><div class="icon"><i class="fas fa-paper-plane"></i></div><p><span style="--i:0">E</span><span style="--i:1">N</span><span style="--i:2">V</span><span style="--i:3">I</span><span style="--i:4">A</span><span style="--i:5">R</span></p></div>
+            </button>
+        </main>
+        
+        <div class="copyright">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Magic Design Efecto. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()" aria-label="Cerrar modal">&times;</button>
+            <img src="https://raw.githubusercontent.com/magicdesignefecto/Gestion-de-Redes-Sociales/1f7db2be0c4d2839f2328cbad3e4c8d4a390b98e/logo%20svg%20magic%20design%20efecto.svg" alt="Logo Magic Design" class="modal-logo">
+            <div class="modal-title">Guardar Contacto</div>
+            <div class="modal-name">Magic Design Efecto</div>
+            <div class="modal-number" id="phoneNumber">63212806</div>
+            <button class="modal-btn" onclick="copyNumber()">
+                <i class="fas fa-copy"></i>
+                <span id="copyBtnText">Copiar Número</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="sticky-footer">
+        <button class="footer-btn" onclick="openModal()" aria-label="Guardar contacto">
+            <i class="fas fa-user-plus"></i>
+            <span>Guardar</span>
+        </button>
+        <button class="footer-btn" onclick="shareProfile()" aria-label="Compartir perfil">
+            <i class="fas fa-share-nodes"></i>
+            <span>Compartir</span>
+        </button>
+    </div>
+
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playClickSound() {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(1800, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.06);
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.08);
+        }
+
+        // Asegurar que el video se mantenga en loop infinito y sin sonido
+        window.addEventListener('load', function() {
+            const iframe = document.getElementById('youtubeVideo');
+            if (iframe) {
+                // Forzar mute y loop usando la API de YouTube
+                setInterval(function() {
+                    try {
+                        iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+                        iframe.contentWindow.postMessage('{"event":"command","func":"setLoop","args":[1]}', '*');
+                    } catch(e) {}
+                }, 1000);
+            }
+        });
+
+        function openSocial(btn, url) {
+            playClickSound();
+            if (btn.classList.contains('clicked')) return;
+            btn.classList.add('clicked');
+            setTimeout(() => {
+                window.open(url, '_blank');
+                setTimeout(() => { btn.classList.remove('clicked'); }, 400);
+            }, 600);
+        }
+
+        function openLink(button, url) {
+            playClickSound(); 
+            if(button.classList.contains('clicked')) return;
+            button.classList.add('clicked');
+            setTimeout(() => {
+                if(url.startsWith('mailto:')) { window.location.href = url; } 
+                else { window.open(url, '_blank'); }
+                setTimeout(() => { button.classList.remove('clicked'); }, 500);
+            }, 1200);
+        }
+
+        function goToServices(button) {
+            playClickSound();
+            if(button.classList.contains('clicked')) return;
+            button.classList.add('clicked');
+            setTimeout(() => {
+                // ABRE LA PAGINA SERVICIOS.HTML
+                window.location.href = 'servicios.html';
+                setTimeout(() => { button.classList.remove('clicked'); }, 500);
+            }, 1200);
+        }
+
+        function openModal() {
+            playClickSound(); 
+            const modal = document.getElementById('contactModal');
+            requestAnimationFrame(() => { modal.classList.add('active'); });
+        }
+
+        function closeModal() {
+            playClickSound(); 
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('active');
+        }
+
+        document.getElementById('contactModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+
+        function copyNumber() {
+            playClickSound(); 
+            const number = "63212806";
+            navigator.clipboard.writeText(number).then(() => {
+                const btnText = document.getElementById('copyBtnText');
+                const originalText = btnText.innerText;
+                btnText.innerText = "¡Copiado!";
+                setTimeout(() => { btnText.innerText = originalText; }, 2000);
+            });
+        }
+
+        function shareProfile() {
+            playClickSound(); 
+            if (navigator.share) {
+                navigator.share({ title: 'Magic Design Efecto', text: 'Te comparto el contacto de Magic Design Efecto:', url: window.location.href }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Enlace copiado al portapapeles');
+            }
+        }
+    </script>
+</body>
+</html>
